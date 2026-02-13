@@ -31,8 +31,8 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-3xl px-6 lg:px-8">
           <div className="rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 p-8 lg:p-12 shadow-2xl">
             <div className="flex flex-col items-center justify-center text-center">
-              <h1 className="text-sm font-bold uppercase tracking-[0.2em] text-lma-gold mb-6 font-display text-2xl lg:text-3xl">
-                Bienvenue sur le site de
+              <h1 className="text-sm font-bold uppercase tracking-[0.2em] text-lma-gold mb-6 font-display text-lg lg:text-xl">
+                Bienvenue sur le site de Louis-Marie Audubert
               </h1>
 
               <p className="mt-8 max-w-2xl text-lg font-light text-white/90 lg:text-xl leading-relaxed">
@@ -71,11 +71,11 @@ export default function Home() {
                     Biographie
                   </h2>
 
-                  <p className="mt-6 text-lg text-foreground/70 lg:text-xl">
+                  <p className="mt-6 text-base leading-relaxed text-foreground/80 lg:text-lg">
                     Artiste pluridisciplinaire, Louis-Marie Audubert explore les frontières entre théâtre, cinéma et musique. Formé au Conservatoire National Supérieur d'Art Dramatique, il développe un travail de recherche oscillant entre texte contemporain et création musicale.
                   </p>
 
-                  <p className="mt-4 text-base leading-relaxed text-foreground/80">
+                  <p className="mt-4 text-base leading-relaxed text-foreground/80 lg:text-lg">
                     Au cinéma, il a travaillé avec des réalisateurs tels que François Ozon, Xavier Dolan et Mia Hansen-Love. Sur scène, il collabore régulièrement avec de nombreux metteurs en scène contemporains et crée ses propres spectacles.
                   </p>
                 </div>

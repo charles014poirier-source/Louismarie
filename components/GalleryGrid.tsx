@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 interface Photo {
@@ -18,12 +18,37 @@ interface GalleryGridProps {
 
 export default function GalleryGrid({ photos, filter = false, onPhotoClick }: GalleryGridProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [visiblePhotos, setVisiblePhotos] = useState<Set<number>>(new Set());
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   const categories = ['All', ...Array.from(new Set(photos.map((photo) => photo.category)))];
 
   const filteredPhotos = selectedCategory === 'All'
     ? photos
     : photos.filter((photo) => photo.category === selectedCategory);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const photoId = parseInt(entry.target.getAttribute('data-photo-id') || '0');
+            setVisiblePhotos((prev) => new Set(prev).add(photoId));
+            observerRef.current?.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    return () => observerRef.current?.disconnect();
+  }, [filteredPhotos]);
+
+  const observePhoto = (element: HTMLElement | null) => {
+    if (element && observerRef.current) {
+      observerRef.current.observe(element);
+    }
+  };
 
   return (
     <div>
@@ -51,9 +76,15 @@ export default function GalleryGrid({ photos, filter = false, onPhotoClick }: Ga
         {filteredPhotos.map((photo, index) => (
           <button
             key={photo.id}
+            ref={observePhoto}
+            data-photo-id={photo.id}
             onClick={() => onPhotoClick?.(photo)}
-            className="group relative aspect-[4/5] overflow-hidden rounded-[2px] bg-lma-dark cursor-pointer text-left"
-            style={{ animationDelay: `${index * 50}ms` }}
+            className={`group relative aspect-[4/5] overflow-hidden rounded-[2px] bg-lma-dark cursor-pointer text-left transition-all duration-1000 ${
+              visiblePhotos.has(photo.id)
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+            }`}
+            style={{ transitionDelay: `${index * 50}ms` }}
           >
             <Image
               src={photo.url}

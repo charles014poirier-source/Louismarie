@@ -1,8 +1,11 @@
+'use client';
+
 import Image from 'next/image';
 import PageHeader from '@/components/PageHeader';
 import Section from '@/components/Section';
 import EmbedPlayer from '@/components/EmbedPlayer';
 import Badge from '@/components/Badge';
+import ScrollReveal from '@/components/ScrollReveal';
 import profile from '@/data/profile';
 
 export default function MusiquePage() {
@@ -61,53 +64,60 @@ export default function MusiquePage() {
       {/* Discography */}
       <Section>
         <div id="discographie" className="py-16 lg:py-24">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
-            Discographie
-          </h2>
+          <ScrollReveal>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
+              Discographie
+            </h2>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {profile.music.discography.map((release) => (
-              <div
-                key={release.id}
-                className="group rounded-[2px] border border-white/5 p-6 transition-all hover:border-lma-gold/30"
-              >
-                <Badge variant="outline">{release.type}</Badge>
-                <h3 className="mt-3 font-display text-xl font-bold text-foreground group-hover:text-lma-gold">
-                  {release.title}
-                </h3>
-                <p className="mt-2 text-sm text-foreground/60">
-                  {release.date} • {release.genre}
-                </p>
-              </div>
-            ))}
-          </div>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {profile.music.discography.map((release, index) => (
+                <ScrollReveal key={release.id} delay={100 * index}>
+                  <div
+                    className="group rounded-[2px] border border-white/5 p-6 transition-all hover:border-lma-gold/30"
+                  >
+                    <Badge variant="outline">{release.type}</Badge>
+                    <h3 className="mt-3 font-display text-xl font-bold text-foreground group-hover:text-lma-gold">
+                      {release.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-foreground/60">
+                      {release.date} • {release.genre}
+                    </p>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </Section>
 
       {/* Videos */}
       <Section>
         <div id="clips" className="py-16 lg:py-24">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
-            Clips & Lives
-          </h2>
+          <ScrollReveal delay={200}>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
+              Clips & Lives
+            </h2>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
-            {profile.music.videos.map((video) => (
-              <div key={video.id}>
-                <EmbedPlayer
-                  type="youtube"
-                  videoId={video.videoId}
-                  title={video.title}
-                />
-                <div className="mt-4">
-                  <h3 className="font-display text-xl font-bold text-foreground">
-                    {video.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-foreground/60">{video.date}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+            <div className="mt-12 grid gap-8 lg:grid-cols-2">
+              {profile.music.videos.map((video, index) => (
+                <ScrollReveal key={video.id} delay={250 + index * 100}>
+                  <div>
+                    <EmbedPlayer
+                      type="youtube"
+                      videoId={video.videoId}
+                      title={video.title}
+                    />
+                    <div className="mt-4">
+                      <h3 className="font-display text-xl font-bold text-foreground">
+                        {video.title}
+                      </h3>
+                      <p className="mt-1 text-sm text-foreground/60">{video.date}</p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </Section>
     </>
