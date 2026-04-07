@@ -52,27 +52,26 @@ export default function ParallaxHero() {
           className="absolute inset-0 will-change-transform"
           style={{ transform: `translateY(${parallaxOffset}px)` }}
         >
-          <Image
-            src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600&q=90"
-            alt="Louis-Marie Audubert"
-            fill
-            className="object-cover object-center"
-            priority
-            quality={90}
-            sizes="100vw"
-            onError={() => setImageError(true)}
-          />
+          {!imageError ? (
+            <Image
+              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600&q=90"
+              alt="Louis-Marie Audubert"
+              fill
+              className="object-cover object-center"
+              priority
+              quality={90}
+              sizes="100vw"
+              onError={() => setImageError(true)}
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-lma-dark via-lma-dark/95 to-black" />
+          )}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         </div>
 
         {/* Floating particles */}
         <FloatingParticles />
       </div>
-
-      {/* Fallback gradient for failed image loads */}
-      {imageError && (
-        <div className="absolute inset-0 bg-gradient-to-br from-lma-dark via-lma-dark/95 to-black" />
-      )}
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-3xl px-6 lg:px-8">
