@@ -9,6 +9,7 @@ import FloatingParticles from '@/components/FloatingParticles';
 export default function ParallaxHero() {
   const [scrollY, setScrollY] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -59,6 +60,7 @@ export default function ParallaxHero() {
             priority
             quality={90}
             sizes="100vw"
+            onError={() => setImageError(true)}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         </div>
@@ -66,6 +68,11 @@ export default function ParallaxHero() {
         {/* Floating particles */}
         <FloatingParticles />
       </div>
+
+      {/* Fallback gradient for failed image loads */}
+      {imageError && (
+        <div className="absolute inset-0 bg-gradient-to-br from-lma-dark via-lma-dark/95 to-black" />
+      )}
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-3xl px-6 lg:px-8">
