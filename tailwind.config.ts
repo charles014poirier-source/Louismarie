@@ -32,6 +32,7 @@ const config: Config = {
       },
       animation: {
         float: 'float 20s ease-in-out infinite',
+        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
       },
       keyframes: {
         float: {
@@ -40,6 +41,14 @@ const config: Config = {
           '50%': { transform: 'translateY(-10px) translateX(-10px)' },
           '75%': { transform: 'translateY(-30px) translateX(5px)' },
         },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animationDelay: {
+        '200': '200ms',
+        '400': '400ms',
       },
     },
   },
