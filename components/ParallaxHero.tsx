@@ -6,6 +6,16 @@ import Link from 'next/link';
 import CTA from '@/components/CTA';
 import FloatingParticles from '@/components/FloatingParticles';
 
+/**
+ * ParallaxHero - Hero section with parallax scrolling and floating particles
+ *
+ * Features:
+ * - Parallax effect (15% scroll speed)
+ * - Floating golden particles
+ * - Reduced motion support
+ * - Image fallback
+ * - Responsive particle count
+ */
 export default function ParallaxHero() {
   const [scrollY, setScrollY] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
