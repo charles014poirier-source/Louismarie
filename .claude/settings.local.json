@@ -16,7 +16,9 @@
       "mcp__plugin_playwright_playwright__browser_run_code",
       "mcp__plugin_playwright_playwright__browser_resize",
       "mcp__plugin_playwright_playwright__browser_close",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(git commit:*)",
+      "Bash(grep -n \"animate-float\\\\|animate-fade-in-up\" /Users/charles/Documents/Code/Louismarie/components/*.tsx)"
     ]
   }
 }

@@ -38,7 +38,7 @@ export default function HeroCarousel({ images, alt, autoPlayInterval = 5000 }: H
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentIndex ? 'opacity-30' : 'opacity-0'
+            index === currentIndex ? 'opacity-70' : 'opacity-0'
           }`}
         >
           <Image
@@ -53,7 +53,7 @@ export default function HeroCarousel({ images, alt, autoPlayInterval = 5000 }: H
       ))}
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/50 to-background/70" />
 
       {/* Navigation dots */}
       <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-2 z-20">
