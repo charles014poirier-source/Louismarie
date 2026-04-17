@@ -92,7 +92,7 @@ export default function Lightbox({ photo, photos, onClose, onNext, onPrevious }:
             src={photo.url}
             alt={photo.title}
             fill
-            className="object-contain"
+            className="object-contain object-center"
             priority
             sizes="100vw"
           />

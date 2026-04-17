@@ -45,7 +45,7 @@ export default function HeroCarousel({ images, alt, autoPlayInterval = 5000 }: H
             src={image}
             alt={`${alt} ${index + 1}`}
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority={index === 0}
             sizes="100vw"
           />

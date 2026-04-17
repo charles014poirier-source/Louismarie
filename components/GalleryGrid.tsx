@@ -116,7 +116,7 @@ export default function GalleryGrid({ photos, filter = false, onPhotoClick }: Ga
               src={photo.url}
               alt={photo.title}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
               // If you ever hit Cloudflare/Next image issues, uncomment:
               // unoptimized

@@ -20,7 +20,7 @@ export default function InfosPage() {
     <>
       <PageHeader
         title="Infos & Contact"
-        description="Actualités et contact professionnel"
+        description="Contact professionnel"
         breadcrumb={[{ label: 'Accueil', href: '/' }, { label: 'Infos', href: '/infos' }]}
       />
 
@@ -163,44 +163,6 @@ export default function InfosPage() {
                   )}
                 </div>
               </ScrollReveal>
-            </div>
-          </ScrollReveal>
-        </div>
-      </Section>
-
-      {/* News */}
-      <Section>
-        <div className="py-16 lg:py-24">
-          <ScrollReveal delay={300}>
-            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
-              Actualités
-            </h2>
-
-            <div className="mt-12 space-y-6">
-              {profile.news.map((news, index) => (
-                <ScrollReveal key={news.id} delay={350 + index * 50}>
-                  <div
-                    className="rounded-[2px] border border-white/5 p-6 transition-colors hover:border-lma-gold/30"
-                  >
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                      <div>
-                        <Badge variant="outline">{news.type}</Badge>
-                        <h3 className="mt-3 font-display text-xl font-bold text-foreground lg:text-2xl">
-                          {news.title}
-                        </h3>
-                        <p className="mt-2 text-base text-foreground/80">{news.description}</p>
-                      </div>
-                      <div className="text-sm text-foreground/60 sm:text-right">
-                        {new Date(news.date).toLocaleDateString('fr-FR', {
-                          day: 'numeric',
-                          month: 'long',
-                          year: 'numeric',
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                </ScrollReveal>
-              ))}
             </div>
           </ScrollReveal>
         </div>

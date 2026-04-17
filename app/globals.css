@@ -25,4 +25,17 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .animate-scroll-horizontal {
+    animation: scrollHorizontal 50s linear infinite;
+  }
+
+  @keyframes scrollHorizontal {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.33%);
+    }
+  }
 }
