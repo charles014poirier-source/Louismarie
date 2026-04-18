@@ -30,21 +30,26 @@ export default function TheatrePage() {
                   <div
                     className="group relative aspect-[4/3] overflow-hidden rounded-[2px] border border-white/5 transition-all hover:border-lma-gold/30"
                   >
-                    <img
-                      src={highlight.image}
-                      alt={highlight.title}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/60" />
-                    <div className="absolute inset-0 flex flex-col justify-end p-8">
+                    <div className="absolute inset-0 flex items-center justify-center p-6">
+                      <img
+                        src={highlight.image}
+                        alt={highlight.title}
+                        className="max-h-full max-w-full object-contain transition-transform duration-700 group-hover:scale-105"
+                        style={{
+                          transform: highlight.scale ? `scale(${highlight.scale})` : undefined,
+                        }}
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+                    <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8">
                       <Badge variant="gold">{highlight.period}</Badge>
-                      <h3 className="mt-4 font-display text-2xl font-bold text-foreground group-hover:text-lma-gold lg:text-3xl">
+                      <h3 className="mt-3 font-display text-xl font-bold text-foreground group-hover:text-lma-gold lg:text-2xl">
                         {highlight.title}
                       </h3>
-                      <p className="mt-2 text-sm text-foreground/60">
+                      <p className="mt-2 text-sm font-medium text-foreground/90 lg:text-base">
                         {highlight.role} • {highlight.director}
                       </p>
-                      <p className="mt-1 text-xs text-foreground/40">
+                      <p className="mt-1 text-xs text-foreground/70 lg:text-sm">
                         {highlight.venue}
                       </p>
                     </div>

@@ -29,12 +29,12 @@ export default function InfosPage() {
         <div className="py-16 lg:py-24">
           <ScrollReveal>
             <div className="mb-16 flex justify-center">
-              <div className="relative aspect-square w-64 overflow-hidden rounded-full border-4 border-lma-gold/20 lg:w-80">
+              <div className="relative aspect-square w-64 overflow-hidden rounded-full border-4 border-lma-gold/20 lg:w-80 shadow-2xl">
                 <Image
-                  src="/Image/Portrait sourire.jpg"
+                  src="/Image/IMG_5066.jpg"
                   alt="Louis-Marie Audubert"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="(max-width: 640px) 256px, 320px"
                   priority
                 />
@@ -155,9 +155,15 @@ export default function InfosPage() {
 
                       <button
                         type="submit"
-                        className="w-full rounded-full bg-lma-gold px-8 py-3 text-sm font-bold uppercase tracking-wider text-background transition-all hover:bg-lma-gold/90"
+                        className="group relative w-full overflow-hidden rounded-full bg-lma-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-background transition-all hover:scale-105 hover:shadow-lg hover:shadow-lma-gold/30 focus:outline-none focus:ring-2 focus:ring-lma-gold focus:ring-offset-2 focus:ring-offset-background"
                       >
-                        Envoyer
+                        <span className="relative z-10">
+                          Envoyer
+                        </span>
+                        <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-500">
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </button>
                     </form>
                   )}

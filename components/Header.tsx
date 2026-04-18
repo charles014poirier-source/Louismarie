@@ -62,9 +62,18 @@ export default function Header() {
           <div className="hidden lg:flex">
             <Link
               href="/infos"
-              className="rounded-full border border-lma-gold/30 px-6 py-2 text-sm font-bold uppercase tracking-wider text-lma-gold transition-all hover:border-lma-gold hover:bg-lma-gold hover:text-background"
+              className="group relative overflow-hidden rounded-full border border-lma-gold/50 px-6 py-2 text-sm font-bold uppercase tracking-wider text-lma-gold transition-all hover:border-lma-gold hover:shadow-lg hover:shadow-lma-gold/40"
             >
-              Contact
+              <span className="relative z-10 flex items-center gap-2">
+                <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+                Contact
+              </span>
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-500">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-lma-gold/30 to-transparent" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-lma-gold/20 to-lma-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </div>
 
@@ -116,9 +125,12 @@ export default function Header() {
               <Link
                 href="/infos"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-display font-bold uppercase tracking-tight text-lma-gold"
+                className="group relative inline-flex items-center gap-3 text-2xl font-display font-bold uppercase tracking-tight text-lma-gold"
               >
-                Contact
+                <svg className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+                <span>Contact</span>
               </Link>
             </div>
           </div>

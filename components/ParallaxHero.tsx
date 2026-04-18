@@ -133,8 +133,8 @@ export default function ParallaxHero() {
               <CTA href="/cinema" variant="primary">
                 Voir la bande-démo
               </CTA>
-              <CTA href="/photos" variant="outline">
-                Galerie photo
+              <CTA href="/infos" variant="outline">
+                Me contacter
               </CTA>
             </div>
           </div>
