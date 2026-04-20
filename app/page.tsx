@@ -8,6 +8,7 @@ import Badge from '@/components/Badge';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxHero from '@/components/ParallaxHero';
 import profile from '@/data/profile';
+import type { AnimationType } from '@/components/ScrollReveal';
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
         <div className="py-16 lg:py-24">
           <div className="mx-auto max-w-6xl">
             {/* Bio */}
-            <ScrollReveal>
+            <ScrollReveal animation="fade-right">
               <div className="grid gap-12 lg:grid-cols-[1fr,300px] lg:gap-16 items-start">
                 <div>
                   <h2 className="font-display text-3xl font-bold tracking-tight text-foreground lg:text-4xl">
@@ -37,15 +38,17 @@ export default function Home() {
                 </div>
 
                 {/* Photo */}
-                <div className="relative aspect-[3/4] overflow-hidden rounded-[2px] border border-white/10 shadow-2xl order-first lg:order-last mx-auto lg:mx-0 w-full max-w-[280px]">
-                  <Image
-                    src="/Image/IMG_5026.jpg"
-                    alt="Louis-Marie Audubert"
-                    fill
-                    className="object-cover object-center-top"
-                    sizes="(max-width: 1024px) 280px, 300px"
-                  />
-                </div>
+                <ScrollReveal animation="zoom-in" delay={200}>
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-[2px] border border-white/10 shadow-2xl order-first lg:order-last mx-auto lg:mx-0 w-full max-w-[280px]">
+                    <Image
+                      src="/Image/IMG_5026.jpg"
+                      alt="Louis-Marie Audubert"
+                      fill
+                      className="object-cover object-center-top"
+                      sizes="(max-width: 1024px) 280px, 300px"
+                    />
+                  </div>
+                </ScrollReveal>
               </div>
             </ScrollReveal>
           </div>
@@ -55,14 +58,14 @@ export default function Home() {
       {/* Key Info */}
       <Section>
         <div className="py-16 lg:py-24">
-          <ScrollReveal delay={100}>
+          <ScrollReveal animation="blur-in" delay={100}>
             <h3 className="font-display text-2xl font-bold tracking-tight text-foreground lg:text-3xl">
               Informations clés
             </h3>
 
             <div className="mt-8 grid gap-8 lg:grid-cols-2">
               {/* Formation */}
-              <ScrollReveal delay={200}>
+              <ScrollReveal animation="fade-left" delay={200}>
                 <div>
                   <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-lma-gold">
                     Formation
@@ -72,7 +75,7 @@ export default function Home() {
               </ScrollReveal>
 
               {/* Langues */}
-              <ScrollReveal delay={300}>
+              <ScrollReveal animation="fade-right" delay={300}>
                 <div>
                   <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-lma-gold">
                     Langues
@@ -88,7 +91,7 @@ export default function Home() {
               </ScrollReveal>
 
               {/* Instruments */}
-              <ScrollReveal delay={400}>
+              <ScrollReveal animation="scale-up" delay={400}>
                 <div>
                   <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-lma-gold">
                     Instruments
@@ -104,7 +107,7 @@ export default function Home() {
               </ScrollReveal>
 
               {/* Chant & Danse */}
-              <ScrollReveal delay={500}>
+              <ScrollReveal animation="rotate-in" delay={500}>
                 <div>
                   <h4 className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-lma-gold">
                     Chant & Danse
@@ -130,7 +133,7 @@ export default function Home() {
       <Section className="text-center">
         <div className="py-24 lg:py-32">
           <div className="mx-auto max-w-5xl mb-16">
-            <ScrollReveal>
+            <ScrollReveal animation="fade-down">
               <h2 className="font-display text-4xl font-bold tracking-tight text-foreground lg:text-5xl mb-4">
                 Explorer son travail
               </h2>
@@ -142,13 +145,13 @@ export default function Home() {
 
           <div className="grid gap-8 lg:grid-cols-3 max-w-6xl mx-auto px-4">
             {/* Cinema */}
-            <ScrollReveal delay={100}>
+            <ScrollReveal animation="zoom-in" delay={100} duration={1200}>
               <Link
                 href="/cinema"
                 className="group relative aspect-[4/3] overflow-hidden rounded-[2px] border border-white/5 transition-all hover:border-lma-gold/30 hover:shadow-2xl hover:shadow-lma-gold/10 block"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80"
                   alt="Cinéma"
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
@@ -156,11 +159,6 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                  <div className="mb-3 rounded-full bg-lma-gold/20 p-2.5 backdrop-blur-sm transition-all group-hover:scale-110 group-hover:bg-lma-gold/30">
-                    <svg className="h-6 w-6 text-lma-gold" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                    </svg>
-                  </div>
                   <h3 className="font-display text-3xl font-bold text-foreground transition-colors group-hover:text-lma-gold sm:text-4xl">
                     Cinéma
                   </h3>
@@ -178,13 +176,13 @@ export default function Home() {
             </ScrollReveal>
 
             {/* Theatre */}
-            <ScrollReveal delay={200}>
+            <ScrollReveal animation="rotate-in" delay={300} duration={1200}>
               <Link
                 href="/theatre"
                 className="group relative aspect-[4/3] overflow-hidden rounded-[2px] border border-white/5 transition-all hover:border-lma-gold/30 hover:shadow-2xl hover:shadow-lma-gold/10 block"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=800&q=80"
                   alt="Théâtre"
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
@@ -192,11 +190,6 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                  <div className="mb-3 rounded-full bg-lma-gold/20 p-2.5 backdrop-blur-sm transition-all group-hover:scale-110 group-hover:bg-lma-gold/30">
-                    <svg className="h-6 w-6 text-lma-gold" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" />
-                    </svg>
-                  </div>
                   <h3 className="font-display text-3xl font-bold text-foreground transition-colors group-hover:text-lma-gold sm:text-4xl">
                     Théâtre
                   </h3>
@@ -214,13 +207,13 @@ export default function Home() {
             </ScrollReveal>
 
             {/* Musique */}
-            <ScrollReveal delay={300}>
+            <ScrollReveal animation="blur-in" delay={500} duration={1200}>
               <Link
                 href="/musique"
                 className="group relative aspect-[4/3] overflow-hidden rounded-[2px] border border-white/5 transition-all hover:border-lma-gold/30 hover:shadow-2xl hover:shadow-lma-gold/10 block"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80"
                   alt="Musique"
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
@@ -228,11 +221,6 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                  <div className="mb-3 rounded-full bg-lma-gold/20 p-2.5 backdrop-blur-sm transition-all group-hover:scale-110 group-hover:bg-lma-gold/30">
-                    <svg className="h-6 w-6 text-lma-gold" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 19V6l12-3v13M9 10l12-3" />
-                    </svg>
-                  </div>
                   <h3 className="font-display text-3xl font-bold text-foreground transition-colors group-hover:text-lma-gold sm:text-4xl">
                     Musique
                   </h3>
@@ -253,17 +241,32 @@ export default function Home() {
       </Section>
 
       {/* Monsieur Louis Chroniques - Facebook Section */}
-      <Section className="bg-gradient-to-b from-lma-dark/50 to-transparent">
-        <div className="py-16 lg:py-24">
-          <ScrollReveal delay={100}>
+      <Section className="relative overflow-hidden">
+        {/* Background image with blur */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1516280440614-6697288d5d38?w=1200&q=80"
+            alt="Background"
+            fill
+            className="object-cover object-center blur-xl scale-105 opacity-60"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+        </div>
+
+        <div className="relative z-10 py-20 lg:py-32">
+          <ScrollReveal animation="fade-down" delay={100}>
             <div className="mx-auto max-w-4xl text-center">
               {/* Facebook Icon */}
               <div className="mb-8 flex justify-center">
-                <div className="rounded-full bg-lma-gold/20 p-6 backdrop-blur-sm">
-                  <svg className="h-12 w-12 text-lma-gold" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </div>
+                <ScrollReveal animation="scale-up" delay={200}>
+                  <div className="rounded-full bg-lma-gold/20 p-6 backdrop-blur-sm">
+                    <svg className="h-12 w-12 text-lma-gold" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                  </div>
+                </ScrollReveal>
               </div>
 
               <h2 className="font-display text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
@@ -275,22 +278,24 @@ export default function Home() {
               </p>
 
               <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:justify-center">
-                <a
-                  href="https://www.facebook.com/people/Monsieur-Louis-Chroniques/61562643643993/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 rounded-full bg-lma-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-background transition-all hover:bg-lma-gold/90 hover:scale-105"
-                >
-                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                  Suivre sur Facebook
-                </a>
+                <ScrollReveal animation="zoom-in" delay={300}>
+                  <a
+                    href="https://www.facebook.com/people/Monsieur-Louis-Chroniques/61562643643993/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-3 rounded-full bg-lma-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-background transition-all hover:bg-lma-gold/90 hover:scale-105"
+                  >
+                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    Suivre sur Facebook
+                  </a>
+                </ScrollReveal>
               </div>
 
               {/* Features */}
               <div className="mt-16 grid gap-8 lg:grid-cols-3">
-                <ScrollReveal delay={200}>
+                <ScrollReveal animation="fade-left" delay={400} duration={1200}>
                   <div className="rounded-[2px] border border-white/5 bg-lma-dark/50 p-6 backdrop-blur-sm transition-colors hover:border-lma-gold/30">
                     <div className="mb-4 text-lma-gold">
                       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
@@ -306,7 +311,7 @@ export default function Home() {
                   </div>
                 </ScrollReveal>
 
-                <ScrollReveal delay={300}>
+                <ScrollReveal animation="fade-up" delay={600} duration={1200}>
                   <div className="rounded-[2px] border border-white/5 bg-lma-dark/50 p-6 backdrop-blur-sm transition-colors hover:border-lma-gold/30">
                     <div className="mb-4 text-lma-gold">
                       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
@@ -322,7 +327,7 @@ export default function Home() {
                   </div>
                 </ScrollReveal>
 
-                <ScrollReveal delay={400}>
+                <ScrollReveal animation="fade-right" delay={800} duration={1200}>
                   <div className="rounded-[2px] border border-white/5 bg-lma-dark/50 p-6 backdrop-blur-sm transition-colors hover:border-lma-gold/30">
                     <div className="mb-4 text-lma-gold">
                       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
@@ -347,7 +352,7 @@ export default function Home() {
       {/* Photo Teaser */}
       <Section>
         <div className="py-24 lg:py-32">
-          <ScrollReveal delay={100}>
+          <ScrollReveal animation="fade-up" delay={100}>
             <div className="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
               <div>
                 <h2 className="font-display text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
@@ -357,34 +362,51 @@ export default function Home() {
                   Une sélection de portraits, plateaux et performances scéniques.
                 </p>
               </div>
-              <CTA href="/photos" variant="outline" className="whitespace-nowrap text-xs px-6 py-2.5 sm:text-sm sm:px-8 sm:py-3">
-                Voir toutes les photos
-              </CTA>
+              <ScrollReveal animation="zoom-in" delay={200}>
+                <CTA href="/photos" variant="outline" className="whitespace-nowrap text-xs px-6 py-2.5 sm:text-sm sm:px-8 sm:py-3">
+                  Voir toutes les photos
+                </CTA>
+              </ScrollReveal>
             </div>
 
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
-              {profile.photos.slice(0, 6).map((photo, index) => (
-                <ScrollReveal key={photo.id} delay={150 + index * 100}>
-                  <div
-                    className="group relative aspect-[4/5] overflow-hidden rounded-[2px] bg-lma-dark"
+              {profile.photos.slice(0, 6).map((photo, index) => {
+                const animations: AnimationType[] = [
+                  'fade-left',
+                  'fade-right',
+                  'zoom-in',
+                  'rotate-in',
+                  'blur-in',
+                  'scale-up'
+                ];
+                return (
+                  <ScrollReveal
+                    key={photo.id}
+                    animation={animations[index % animations.length]}
+                    delay={150 + index * 100}
+                    duration={1000}
                   >
-                    <Image
-                      src={photo.url}
-                      alt={photo.title}
-                      fill
-                      className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                      <p className="text-xs font-bold uppercase tracking-wider text-lma-gold">
-                        {photo.category}
-                      </p>
-                      <p className="mt-1 text-sm text-foreground">{photo.title}</p>
+                    <div
+                      className="group relative aspect-[4/5] overflow-hidden rounded-[2px] bg-lma-dark"
+                    >
+                      <Image
+                        src={photo.url}
+                        alt={photo.title}
+                        fill
+                        className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                      />
+                      <div className="absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                        <p className="text-xs font-bold uppercase tracking-wider text-lma-gold">
+                          {photo.category}
+                        </p>
+                        <p className="mt-1 text-sm text-foreground">{photo.title}</p>
+                      </div>
                     </div>
-                  </div>
-                </ScrollReveal>
-              ))}
+                  </ScrollReveal>
+                );
+              })}
             </div>
           </ScrollReveal>
         </div>

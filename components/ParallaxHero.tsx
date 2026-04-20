@@ -53,11 +53,11 @@ export default function ParallaxHero() {
 
   // Artistic images for actor/singer: theatre, music, performance
   const artisticImages = [
-    '/Image/IMG_3517.JPG', // Portrait principal Louis-Marie Audubert
-    '/Image/LMA-137-13x18.jpg', // Portrait studio
-    '/Image/IMG_5026.jpg', // Portrait artistique
     '/Image/IMG_5066.jpg', // Portrait naturel
-    '/Image/Capture d\'écran 2025-01-04 à 16.14.23.png', // Capture écran
+    '/Image/IMG_3517.JPG', // Portrait principal Louis-Marie Audubert
+    '/Image/LMA-149-13x18 - copie.jpg', // Portrait artistique
+    '/Image/LMA-137-13x18.jpg', // Portrait studio
+    '/Image/IMG_5026.jpg', // Portrait dynamique
   ];
 
   // Duplicate images for seamless infinite scroll
@@ -85,7 +85,6 @@ export default function ParallaxHero() {
             }}
           >
             {duplicatedImages.map((image, index) => {
-              // La 3ème photo (IMG_5026.jpg) a un cadrage différent
               const originalIndex = (index % artisticImages.length);
               const isThirdPosition = originalIndex === 2;
 
@@ -101,7 +100,7 @@ export default function ParallaxHero() {
                     fill
                     className="object-cover"
                     style={{
-                      objectPosition: isThirdPosition ? '50% 20%' : 'center'
+                      objectPosition: isThirdPosition ? '50% 25%' : 'center'
                     }}
                     sizes="20vw"
                     priority={index < 5}
