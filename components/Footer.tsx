@@ -39,8 +39,8 @@ export default function Footer() {
       </div>
 
       {/* Ghost Brand Mark - Centré et réduit */}
-      <div className="pointer-events-none overflow-hidden flex justify-center">
-        <h1 className="font-display text-[8vw] font-bold text-foreground/[0.02] leading-none">
+      <div className="overflow-hidden flex justify-center">
+        <h1 className="font-display text-[8vw] font-bold text-foreground/[0.02] leading-none cursor-pointer transition-all duration-500 hover:text-lma-gold/30 hover:scale-105 hover:drop-shadow-[0_0_30px_rgba(212,175,55,0.5)]">
           LOUIS-MARIE
         </h1>
       </div>

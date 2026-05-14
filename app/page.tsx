@@ -7,6 +7,7 @@ import CTA from '@/components/CTA';
 import Badge from '@/components/Badge';
 import ScrollReveal from '@/components/ScrollReveal';
 import ParallaxHero from '@/components/ParallaxHero';
+import { PortfolioGallery } from '@/components/PortfolioGallery';
 import profile from '@/data/profile';
 import type { AnimationType } from '@/components/ScrollReveal';
 
@@ -33,7 +34,7 @@ export default function Home() {
                   </p>
 
                   <p className="mt-4 text-base leading-relaxed text-foreground/80 lg:text-lg">
-                    Au cinéma, il a travaillé avec des réalisateurs tels que François Ozon, Xavier Dolan et Mia Hansen-Love. Sur scène, il collabore régulièrement avec de nombreux metteurs en scène contemporains et crée ses propres spectacles.
+                    Au cinéma, il a travaillé avec des réalisateurs tels que Léa Domenach, Édouard Baer, Jean-Pierre Jeunet. Sur scène, il collabore régulièrement avec de nombreux metteurs en scène contemporains et crée ses propres spectacles.
                   </p>
                 </div>
 
@@ -151,7 +152,7 @@ export default function Home() {
                 className="group relative aspect-[4/3] overflow-hidden rounded-[2px] border border-white/5 transition-all hover:border-lma-gold/30 hover:shadow-2xl hover:shadow-lma-gold/10 block"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800&q=80"
+                  src="/Image/LM et françois.jpeg"
                   alt="Cinéma"
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
@@ -213,7 +214,7 @@ export default function Home() {
                 className="group relative aspect-[4/3] overflow-hidden rounded-[2px] border border-white/5 transition-all hover:border-lma-gold/30 hover:shadow-2xl hover:shadow-lma-gold/10 block"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80"
+                  src="/Image/photo accordéon.jpeg"
                   alt="Musique"
                   fill
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
@@ -350,67 +351,20 @@ export default function Home() {
       </Section>
 
       {/* Photo Teaser */}
-      <Section>
-        <div className="py-24 lg:py-32">
-          <ScrollReveal animation="fade-up" delay={100}>
-            <div className="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-              <div>
-                <h2 className="font-display text-4xl font-bold tracking-tight text-foreground lg:text-5xl">
-                  Galerie photo
-                </h2>
-                <p className="mt-4 max-w-xl text-lg text-foreground/60">
-                  Une sélection de portraits, plateaux et performances scéniques.
-                </p>
-              </div>
-              <ScrollReveal animation="zoom-in" delay={200}>
-                <CTA href="/photos" variant="outline" className="whitespace-nowrap text-xs px-6 py-2.5 sm:text-sm sm:px-8 sm:py-3">
-                  Voir toutes les photos
-                </CTA>
-              </ScrollReveal>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 lg:grid-cols-3">
-              {profile.photos.slice(0, 6).map((photo, index) => {
-                const animations: AnimationType[] = [
-                  'fade-left',
-                  'fade-right',
-                  'zoom-in',
-                  'rotate-in',
-                  'blur-in',
-                  'scale-up'
-                ];
-                return (
-                  <ScrollReveal
-                    key={photo.id}
-                    animation={animations[index % animations.length]}
-                    delay={150 + index * 100}
-                    duration={1000}
-                  >
-                    <div
-                      className="group relative aspect-[4/5] overflow-hidden rounded-[2px] bg-lma-dark"
-                    >
-                      <Image
-                        src={photo.url}
-                        alt={photo.title}
-                        fill
-                        className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                      />
-                      <div className="absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                      <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                        <p className="text-xs font-bold uppercase tracking-wider text-lma-gold">
-                          {photo.category}
-                        </p>
-                        <p className="mt-1 text-sm text-foreground">{photo.title}</p>
-                      </div>
-                    </div>
-                  </ScrollReveal>
-                );
-              })}
-            </div>
-          </ScrollReveal>
-        </div>
-      </Section>
+      <PortfolioGallery
+        title="Galerie photo"
+        archiveButton={{
+          text: "Voir toutes les photos",
+          href: "/photos"
+        }}
+        images={profile.photos.map(photo => ({
+          src: photo.url,
+          alt: photo.title,
+          title: photo.title
+        }))}
+        className="bg-background"
+        marqueeRepeat={3}
+      />
     </>
   );
 }

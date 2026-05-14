@@ -67,7 +67,7 @@ export default function ParallaxHero() {
   return (
     <section
       ref={heroRef}
-      className="relative h-[85vh] flex items-center justify-center overflow-hidden pt-24 bg-black"
+      className="relative h-screen flex items-center justify-center overflow-hidden pt-24 bg-black"
     >
       {/* Background with horizontal scrolling carousel */}
       <div className="absolute inset-0">
@@ -118,17 +118,17 @@ export default function ParallaxHero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-3xl px-6 lg:px-8">
-        <div className="rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 p-8 lg:p-12 shadow-2xl">
+        <div className="rounded-2xl bg-black/60 backdrop-blur-md border border-white/10 p-4 md:p-6 lg:p-12 shadow-2xl">
           <div className="flex flex-col items-center justify-center text-center">
-            <h1 className="text-sm font-bold uppercase tracking-[0.2em] text-lma-gold mb-6 font-display text-lg lg:text-xl animate-fade-in-up">
+            <h1 className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-lma-gold mb-4 sm:mb-6 font-display sm:text-lg lg:text-xl animate-fade-in-up">
               Bienvenue sur le site de Louis-Marie Audubert
             </h1>
 
-            <p className="mt-8 max-w-2xl text-lg font-light text-white/90 lg:text-xl leading-relaxed animate-fade-in-up animation-delay-200">
+            <p className="mt-4 sm:mt-8 max-w-2xl text-sm sm:text-lg font-light text-white/90 lg:text-xl leading-relaxed animate-fade-in-up animation-delay-200">
               Artiste pluridisciplinaire, Louis-Marie Audubert explore les frontières entre théâtre, cinéma et musique. Formé au Conservatoire National Supérieur d'Art Dramatique, il développe un travail de recherche oscillant entre texte contemporain et création musicale.
             </p>
 
-            <div className="mt-12 flex flex-wrap gap-4 justify-center animate-fade-in-up animation-delay-400">
+            <div className="mt-6 sm:mt-12 flex flex-wrap gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-400">
               <CTA href="/cinema" variant="primary">
                 Voir la bande-démo
               </CTA>

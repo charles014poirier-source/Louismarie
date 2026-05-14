@@ -10,14 +10,14 @@ export const profile = {
     long: [
       "Louis-Marie Audubert est un artiste français dont le travail s'articule autour de trois pôles majeurs : le jeu d'acteur, la composition musicale et la mise en scène.",
       "Après des études de philosophie et une formation musicale (piano, composition, chant), il intègre le Conservatoire National Supérieur d'Art Dramatique de Paris dont il sort diplômé en 2018.",
-      "Au cinéma, il a travaillé avec des réalisateurs tels que François Ozon, Xavier Dolan et Mia Hansen-Love. Son jeu, tantôt incisif tantôt lumineux, lui vaut d'être sélectionné aux César du Meilleur Espoir Masculin en 2022.",
+      "Au cinéma, il a travaillé avec des réalisateurs tels que Léa Domenach, Édouard Baer, Jean-Pierre Jeunet. Son jeu, tantôt incisif tantôt lumineux, lui vaut d'être sélectionné aux César du Meilleur Espoir Masculin en 2022.",
       "Sur scène, il collabore régulièrement avec de nombreux metteurs en scène contemporains et crée ses propres spectacles, mêlant théâtre et musique live.",
       "Parallèlement, il développe un projet musical solo sous le nom de LMA, sortant plusieurs EP et EPs qui rencontrent un succès critique.",
     ],
     keyInfo: {
-      formation: "Conservatoire National Supérieur d'Art Dramatique (2018)",
+      formation: "Conservatoire National Supérieur d'Art Dramatique (1985)",
       langues: ["Français (natif)", "Anglais (courant)", "Espagnol (intermédiaire)"],
-      instruments: ["Piano", "Guitare", "Basse", "Composition"],
+      instruments: ["Piano", "Accordéon", "Guitare", "Composition"],
       chant: "Ténor, formations classique et jazz",
       danse: ["Contemporain", "Classique"],
     },
@@ -44,7 +44,7 @@ export const profile = {
       type: "cinema",
       title: "L'Été Dernier",
       subtitle: "Long métrage - 2024",
-      description: "Rôle principal aux côtés de Léa Seydoux. Real. Mia Hansen-Love",
+      description: "Rôle principal aux côtés de Léa Seydoux. Real. Léa Domenach, Édouard Baer, Jean-Pierre Jeunet",
       image: "C:\Dev\louis marie 2\Images\Reste",
       link: "/cinema",
     },
@@ -404,7 +404,7 @@ export const profile = {
       {
         id: 3,
         title: "HONNEUR AUX FEMMES 14/18",
-        year: "2023",
+        year: "2024",
         role: "",
         director: "",
         venue: "Festival d'Aurillac et tournée régions",
@@ -776,6 +776,7 @@ export const profile = {
 
   // Photos
   photos: [
+    // Portraits
     { id: 1, url: "/Image/IMG_3517.JPG", category: "Portrait", title: "Portrait professionnel" },
     { id: 2, url: "/Image/LMA-137-13x18.jpg", category: "Portrait", title: "Portrait studio" },
     { id: 3, url: "/Image/LMA-149-13x18 - copie.jpg", category: "Portrait", title: "Portrait artistique" },
@@ -790,6 +791,17 @@ export const profile = {
     { id: 12, url: "/Image/portrait pas content.jpg", category: "Portrait", title: "Portrait caractère" },
     { id: 13, url: "/Image/Portrait sourire.jpg", category: "Portrait", title: "Portrait sourire" },
     { id: 14, url: "/Image/Portrait zoom.jpg", category: "Portrait", title: "Portrait zoom" },
+    { id: 15, url: "/Image/portrait bio.jpg", category: "Portrait", title: "Portrait bio" },
+    { id: 16, url: "/Image/portrait de coté clavier.jpg", category: "Portrait", title: "Portrait de profil clavier" },
+    { id: 17, url: "/Image/LM et françois.jpeg", category: "Portrait", title: "LM et François" },
+
+    // Musique
+    { id: 18, url: "/Image/photo accordéon.jpeg", category: "Musique", title: "Photo accordéon" },
+    { id: 19, url: "/Image/accordéon regard lointain.jpeg", category: "Musique", title: "Accordéon regard lointain" },
+    { id: 20, url: "/Image/LÉON D'L'ACCORD .JPG", category: "Musique", title: "Léon d'l'accord" },
+
+    // Paysage
+    { id: 23, url: "/Image/Paysage fleur.jpeg", category: "Paysage", title: "Paysage fleuri" },
   ],
 
   // Presse
